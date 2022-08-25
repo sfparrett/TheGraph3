@@ -1,0 +1,23 @@
+specVersion: 0.0.1
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: Swappa_Test
+    network: celo
+    source:
+      address: "0xf7aF16eFab9c6dfb712f207f293BfB8759ec062f"
+      abi: Swappa_Test
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - Swap
+      abis:
+        - name: Swappa_Test
+          file: ./abis/Swappa_Test.json
+      eventHandlers:
+        - event: Swap(indexed address,address,indexed address,indexed address,uint256,uint256)
+          handler: handleSwap
+      file: ./src/swappa-test.ts
