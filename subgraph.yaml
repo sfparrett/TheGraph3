@@ -1,4 +1,4 @@
-specVersion: 0.0.1
+specVersion: 0.0.4
 schema:
   file: ./schema.graphql
 dataSources:
@@ -10,10 +10,10 @@ dataSources:
       abi: Swappa_Test
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.5
+      apiVersion: 0.0.6
       language: wasm/assemblyscript
       entities:
-        - Swap
+        - SwapEntity
       abis:
         - name: Swappa_Test
           file: ./abis/Swappa_Test.json
